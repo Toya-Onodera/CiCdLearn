@@ -26,7 +26,11 @@
     "lint": "eslint --ext .jsx,.js,.tsx,.ts src/",
     "lint-staged": "lint-staged",
     "lint:style": "stylelint '**/*.{css,scss,sass}'",
-    "lint:style:fix": "stylelint --fix '**/*.{css,scss,sass}'"
+    "lint:style:fix": "stylelint --fix '**/*.{css,scss,sass}'",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox"
   },
   "browserslist": {
     "production": [
@@ -41,9 +45,13 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
+    "cypress": "^9.1.1",
     "eslint": "^8.5.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.27.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.3",

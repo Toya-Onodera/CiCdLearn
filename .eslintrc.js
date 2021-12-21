@@ -2,13 +2,14 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    "cypress/globals": true,
   },
   extends: [
-    "react-app",
-    "react-app/jest",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:cypress/recommended",
+    "plugin:chai-friendly/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -18,9 +19,16 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "cypress"],
   rules: {
-    "no-unused-var": 0,
+    "no-unused-vars": 0,
     "no-undef": "off",
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error",
+    "cypress/no-pause": "error",
+    "cypress/no-unused-var": 0,
   },
 };
