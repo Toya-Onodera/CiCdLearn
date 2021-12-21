@@ -53,9 +53,12 @@
     "stylelint-order": "^5.0.0"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
+    "**/*.{js,ts,jsx,tsx}": [
       "eslint --fix",
       "prettier --write"
+    ],
+    "**/*.{css,scss,sass}": [
+      "stylelint --fix"
     ]
   }
 }
