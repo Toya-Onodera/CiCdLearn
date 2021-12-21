@@ -10,6 +10,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:cypress/recommended",
     "plugin:chai-friendly/recommended",
+    "plugin:storybook/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -31,4 +32,12 @@ module.exports = {
     "cypress/no-pause": "error",
     "cypress/no-unused-var": 0,
   },
+  overrides: [
+    {
+      files: ["**/*.stories.*"],
+      rules: {
+        "import/no-anonymous-default-export": "off",
+      },
+    },
+  ],
 };
