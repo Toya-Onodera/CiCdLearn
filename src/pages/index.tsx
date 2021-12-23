@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import logo from "../logo.svg";
+import "../App.css";
 
-function App() {
+const Index: React.FC = () => {
   return (
     <div className="app">
       <header className="app-header">
@@ -21,6 +21,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
-export default App;
+export default Index;
