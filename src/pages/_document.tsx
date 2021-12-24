@@ -1,26 +1,12 @@
-import React from "react";
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import Document, { DocumentContext } from "next/document";
 
-type Props = {
-  pageTitle: string;
-};
+// eslint-disable-next-line @typescript-eslint/ban-types
+type Props = {};
 
-class Document extends NextDocument<Props> {
-  render() {
-    const { pageTitle } = this.props;
-
-    return (
-      <Html lang="ja">
-        <Head>
-          <title>{pageTitle}</title>
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
+class MyDocument extends Document<Props> {
+  static async getInitialProps(ctx: DocumentContext) {
+    return await Document.getInitialProps(ctx);
   }
 }
 
-export default Document;
+export default MyDocument;
